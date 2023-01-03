@@ -1924,7 +1924,24 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "login"
+  name: "login",
+  data: function data() {
+    return {
+      form: {
+        email: null,
+        password: null
+      }
+    };
+  },
+  methods: {
+    login: function login() {
+      axios.post('/api/auth/login', this.form).then(function (res) {
+        console.log(res.data);
+      })["catch"](function (error) {
+        return console.log(error.response.data);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2048,21 +2065,78 @@ var render = function render() {
     staticClass: "col-lg-12"
   }, [_c("div", {
     staticClass: "login-form"
-  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+  }, [_vm._m(0), _vm._v(" "), _c("form", {
+    staticClass: "user",
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.login.apply(null, arguments);
+      }
+    }
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.email,
+      expression: "form.email"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "email",
+      id: "exampleInputEmail",
+      "aria-describedby": "emailHelp",
+      placeholder: "Enter Email Address"
+    },
+    domProps: {
+      value: _vm.form.email
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "email", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.password,
+      expression: "form.password"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "password",
+      id: "exampleInputPassword",
+      placeholder: "Password"
+    },
+    domProps: {
+      value: _vm.form.password
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "password", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("hr")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
     staticClass: "text-center"
   }, [_c("router-link", {
     staticClass: "font-weight-bold small",
     attrs: {
       to: "/register"
     }
-  }, [_vm._v("Create an Account!")])], 1), _vm._v(" "), _c("div", {
+  }, [_vm._v("Create an Account!\n                                    ")])], 1), _vm._v(" "), _c("div", {
     staticClass: "text-center"
   }, [_c("router-link", {
     staticClass: "font-weight-bold small",
     attrs: {
       to: "/forget"
     }
-  }, [_vm._v("Forget Password")])], 1)])])])])])])])]);
+  }, [_vm._v("Forget Password\n                                    ")])], 1)])])])])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -2075,28 +2149,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("form", {
-    staticClass: "user"
-  }, [_c("div", {
-    staticClass: "form-group"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "email",
-      id: "exampleInputEmail",
-      "aria-describedby": "emailHelp",
-      placeholder: "Enter Email Address"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "password",
-      id: "exampleInputPassword",
-      placeholder: "Password"
-    }
-  })]), _vm._v(" "), _c("div", {
+  return _c("div", {
     staticClass: "form-group"
   }, [_c("div", {
     staticClass: "custom-control custom-checkbox small",
@@ -2114,14 +2167,18 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "customCheck"
     }
-  }, [_vm._v("Remember\n                                                Me")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Remember\n                                                Me")])])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
     staticClass: "form-group"
-  }, [_c("a", {
+  }, [_c("button", {
     staticClass: "btn btn-primary btn-block",
     attrs: {
-      href: "index.html"
+      type: "submit"
     }
-  }, [_vm._v("Login")])]), _vm._v(" "), _c("hr")]);
+  }, [_vm._v("Login")])]);
 }];
 render._withStripped = true;
 
