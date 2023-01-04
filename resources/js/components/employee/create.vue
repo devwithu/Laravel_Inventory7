@@ -115,10 +115,6 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <router-link to="/" class="font-weight-bold small">Already have an account?
-                                        </router-link>
-                                    </div>
-                                    <div class="text-center">
                                     </div>
                                 </div>
                             </div>
