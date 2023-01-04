@@ -321,9 +321,15 @@
 </template>
 
 
-<script type="text/javascript">
-
-
+<script>
+export default {
+    name: "login",
+    created(){
+        if (!User.loggedIn()) {
+            this.$router.push({name: '/'})
+        }
+    }
+}
 </script>
 
 
