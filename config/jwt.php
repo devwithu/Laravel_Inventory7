@@ -17,7 +17,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Don't forget to set this in your .env file, as it will be used to sign
-    | your tokens. A helper command is provided for this:
+    | your tokens. A helpers command is provided for this:
     | `php artisan jwt:secret`
     |
     | Note: This will be used for Symmetric algorithms only (HMAC),

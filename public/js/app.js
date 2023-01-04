@@ -1557,7 +1557,7 @@ var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/h
 
 /*global toString:true*/
 
-// utils is a library of generic helper functions non-specific to axios
+// utils is a library of generic helpers functions non-specific to axios
 
 var toString = Object.prototype.toString;
 
@@ -10712,7 +10712,7 @@ jQuery.extend( {
 		return deferred;
 	},
 
-	// Deferred helper
+	// Deferred helpers
 	when: function( singleValue ) {
 		var
 
@@ -18128,7 +18128,7 @@ return jQuery;
     } catch (e) {}
   }());
 
-  /* Node.js helper references. */
+  /* Node.js helpers references. */
   var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer,
       nodeIsDate = nodeUtil && nodeUtil.isDate,
       nodeIsMap = nodeUtil && nodeUtil.isMap,
@@ -41886,7 +41886,7 @@ function createTextVNode(val) {
 // multiple renders, cloning them avoids errors when DOM manipulations rely
 // on their elm reference.
 function cloneVNode(vnode) {
-    const cloned = new VNode(vnode.tag, vnode.data, 
+    const cloned = new VNode(vnode.tag, vnode.data,
     // #7975
     // clone children array to avoid mutating original in case of cloning
     // a child.
@@ -43072,7 +43072,7 @@ function registerDeepBindings(data) {
 }
 
 /**
- * Runtime helper for rendering v-for lists.
+ * Runtime helpers for rendering v-for lists.
  */
 function renderList(val, render) {
     let ret = null, i, l, keys, key;
@@ -43115,7 +43115,7 @@ function renderList(val, render) {
 }
 
 /**
- * Runtime helper for rendering <slot>
+ * Runtime helpers for rendering <slot>
  */
 function renderSlot(name, fallbackRender, props, bindObject) {
     const scopedSlotFn = this.$scopedSlots[name];
@@ -43148,7 +43148,7 @@ function renderSlot(name, fallbackRender, props, bindObject) {
 }
 
 /**
- * Runtime helper for resolving filters
+ * Runtime helpers for resolving filters
  */
 function resolveFilter(id) {
     return resolveAsset(this.$options, 'filters', id, true) || identity;
@@ -43163,7 +43163,7 @@ function isKeyNotMatch(expect, actual) {
     }
 }
 /**
- * Runtime helper for checking keyCodes from config.
+ * Runtime helpers for checking keyCodes from config.
  * exposed as Vue.prototype._k
  * passing in eventKeyName as last argument separately for backwards compat
  */
@@ -43182,7 +43182,7 @@ function checkKeyCodes(eventKeyCode, key, builtInKeyCode, eventKeyName, builtInK
 }
 
 /**
- * Runtime helper for merging v-bind="object" into a VNode's data.
+ * Runtime helpers for merging v-bind="object" into a VNode's data.
  */
 function bindObjectProps(data, tag, value, asProp, isSync) {
     if (value) {
@@ -43223,7 +43223,7 @@ function bindObjectProps(data, tag, value, asProp, isSync) {
 }
 
 /**
- * Runtime helper for rendering static trees.
+ * Runtime helpers for rendering static trees.
  */
 function renderStatic(index, isInFor) {
     const cached = this._staticTrees || (this._staticTrees = []);
@@ -43240,7 +43240,7 @@ function renderStatic(index, isInFor) {
     return tree;
 }
 /**
- * Runtime helper for v-once.
+ * Runtime helpers for v-once.
  * Effectively it means marking the node as static with a unique key.
  */
 function markOnce(tree, index, key) {
@@ -43282,7 +43282,7 @@ function bindObjectListeners(data, value) {
     return data;
 }
 
-function resolveScopedSlots(fns, res, 
+function resolveScopedSlots(fns, res,
 // the following are added in 2.6
 hasDynamicKeys, contentHashKey) {
     res = res || { $stable: !hasDynamicKeys };
@@ -43307,7 +43307,7 @@ hasDynamicKeys, contentHashKey) {
     return res;
 }
 
-// helper to process dynamic keys for dynamic arguments in v-bind and v-on.
+// helpers to process dynamic keys for dynamic arguments in v-bind and v-on.
 function bindDynamicKeys(baseObj, values) {
     for (let i = 0; i < values.length; i += 2) {
         const key = values[i];
@@ -43321,7 +43321,7 @@ function bindDynamicKeys(baseObj, values) {
     }
     return baseObj;
 }
-// helper to dynamically append modifier runtime markers to event names.
+// helpers to dynamically append modifier runtime markers to event names.
 // ensure only append when value is already string, otherwise it will be cast
 // to string and cause the type check to miss.
 function prependModifier(value, symbol) {
@@ -43349,7 +43349,7 @@ function installRenderHelpers(target) {
 }
 
 /**
- * Runtime helper for resolving raw children VNodes into a slot object.
+ * Runtime helpers for resolving raw children VNodes into a slot object.
  */
 function resolveSlots(children, context) {
     if (!children || !children.length) {
@@ -43634,7 +43634,7 @@ function getContext() {
     return vm._setupContext || (vm._setupContext = createSetupContext(vm));
 }
 /**
- * Runtime helper for merging default declarations. Imported by compiled code
+ * Runtime helpers for merging default declarations. Imported by compiled code
  * only.
  * @internal
  */
@@ -45065,7 +45065,7 @@ function useCssModule(name = '$style') {
 }
 
 /**
- * Runtime helper for SFC's CSS variable injection feature.
+ * Runtime helpers for SFC's CSS variable injection feature.
  * @private
  */
 function useCssVars(getter) {
@@ -45322,7 +45322,7 @@ let uid$1 = 0;
  */
 class Watcher {
     constructor(vm, expOrFn, cb, options, isRenderWatcher) {
-        recordEffectScope(this, 
+        recordEffectScope(this,
         // if the active effect scope is manually created (not a component scope),
         // prioritize it
         activeEffectScope && !activeEffectScope._vm
@@ -46222,14 +46222,14 @@ function createComponent(Ctor, data, context, children, tag) {
     const name = getComponentName(Ctor.options) || tag;
     const vnode = new VNode(
     // @ts-expect-error
-    `vue-component-${Ctor.cid}${name ? `-${name}` : ''}`, data, undefined, undefined, undefined, context, 
+    `vue-component-${Ctor.cid}${name ? `-${name}` : ''}`, data, undefined, undefined, undefined, context,
     // @ts-expect-error
     { Ctor, propsData, listeners, tag, children }, asyncFactory);
     return vnode;
 }
 function createComponentInstanceForVnode(
 // we know it's MountedComponentVNode but flow doesn't
-vnode, 
+vnode,
 // activeInstance in lifecycle state
 parent) {
     const options = {
@@ -47289,7 +47289,7 @@ Object.defineProperty(Vue.prototype, '$ssrContext', {
         return this.$vnode && this.$vnode.ssrContext;
     }
 });
-// expose FunctionalRenderContext for ssr runtime helper installation
+// expose FunctionalRenderContext for ssr runtime helpers installation
 Object.defineProperty(Vue, 'FunctionalRenderContext', {
     value: FunctionalRenderContext
 });
@@ -48304,7 +48304,7 @@ function createPatchFunction(backend) {
                 const oldElm = oldVnode.elm;
                 const parentElm = nodeOps.parentNode(oldElm);
                 // create new node
-                createElm(vnode, insertedVnodeQueue, 
+                createElm(vnode, insertedVnodeQueue,
                 // extremely rare edge case: do not insert if old element is in a
                 // leaving transition. Only happens when combining transition +
                 // keep-alive + HOCs. (#4590)
@@ -48911,7 +48911,7 @@ function genComponentModel(el, value, modifiers) {
     };
 }
 /**
- * Cross-platform codegen helper for generating v-model value assignment code.
+ * Cross-platform codegen helpers for generating v-model value assignment code.
  */
 function genAssignmentCode(value, assignment) {
     const res = parseModel(value);
@@ -49202,7 +49202,7 @@ function add(name, handler, capture, passive) {
     target.addEventListener(name, handler, supportsPassive ? { capture, passive } : capture);
 }
 function remove(name, handler, capture, _target) {
-    (_target || target).removeEventListener(name, 
+    (_target || target).removeEventListener(name,
     //@ts-expect-error
     handler._wrapper || handler, capture);
 }
@@ -52379,7 +52379,7 @@ function genData(el, state) {
     data = data.replace(/,$/, '') + '}';
     // v-bind dynamic argument wrap
     // v-bind with dynamic arguments must be applied using the same v-bind object
-    // merge helper so that class/style/mustUseProp attrs are handled correctly.
+    // merge helpers so that class/style/mustUseProp attrs are handled correctly.
     if (el.dynamicAttrs) {
         data = `_b(${data},"${el.tag}",${genProps(el.dynamicAttrs)})`;
     }
@@ -53255,7 +53255,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   "5a6a7d8e",
   null
-  
+
 )
 
 /* hot reload */
@@ -53275,7 +53275,7 @@ component.options.__file = "resources/js/components/auth/forget.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_forget_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./forget.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/auth/forget.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_forget_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_forget_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
@@ -53324,7 +53324,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   "6aa0b866",
   null
-  
+
 )
 
 /* hot reload */
@@ -53344,7 +53344,7 @@ component.options.__file = "resources/js/components/auth/login.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./login.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/auth/login.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
@@ -53393,7 +53393,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   "e8907422",
   null
-  
+
 )
 
 /* hot reload */
@@ -53413,7 +53413,7 @@ component.options.__file = "resources/js/components/auth/register.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_register_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./register.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/auth/register.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_register_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_register_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
