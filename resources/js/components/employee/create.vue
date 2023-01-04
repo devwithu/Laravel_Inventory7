@@ -132,7 +132,7 @@
 
 <script>
 export default {
-    name: "regster",
+    name: "create",
     created() {
         if (!User.loggedIn()) {
             this.$router.push({name: '/'})
@@ -154,8 +154,29 @@ export default {
             errors:{}
         }
     },
-    methods: {
+    methods:{
+        onFileSelected(event){
+            let file = event.target.files[0];
+            if (file.size > 1048770) {
+                Notification.image_validation()
+            }else{
+                let reader = new FileReader();
+                reader.onload = event =>{
+                    this.form.photo = event.target.result
+                    console.log(event.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
 
+        },
+        employeeInsert(){
+            axios.post('/api/employee',this.form)
+                .then(() => {
+                    this.$router.push({ name: 'employee'})
+                    Notification.success()
+                })
+                .catch(error =>this.errors = error.response.data.errors)
+        },
     }
 }
 </script>

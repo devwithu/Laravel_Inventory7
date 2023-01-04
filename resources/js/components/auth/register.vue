@@ -52,7 +52,7 @@
 
 <script>
 export default {
-    name: "regster",
+    name: "register",
     created() {
         if (User.loggedIn()) {
             this.$router.push({name: 'home'})

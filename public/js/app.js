@@ -2000,7 +2000,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "regster",
+  name: "register",
   created: function created() {
     if (User.loggedIn()) {
       this.$router.push({
@@ -2050,7 +2050,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "regster",
+  name: "create",
   created: function created() {
     if (!User.loggedIn()) {
       this.$router.push({
@@ -2073,7 +2073,33 @@ __webpack_require__.r(__webpack_exports__);
       errors: {}
     };
   },
-  methods: {}
+  methods: {
+    onFileSelected: function onFileSelected(event) {
+      var _this = this;
+      var file = event.target.files[0];
+      if (file.size > 1048770) {
+        Notification.image_validation();
+      } else {
+        var reader = new FileReader();
+        reader.onload = function (event) {
+          _this.form.photo = event.target.result;
+          console.log(event.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    },
+    employeeInsert: function employeeInsert() {
+      var _this2 = this;
+      axios.post('/api/employee', this.form).then(function () {
+        _this2.$router.push({
+          name: 'employee'
+        });
+        Notification.success();
+      })["catch"](function (error) {
+        return _this2.errors = error.response.data.errors;
+      });
+    }
+  }
 });
 
 /***/ }),
