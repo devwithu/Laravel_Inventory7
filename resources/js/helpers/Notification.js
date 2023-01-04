@@ -7,7 +7,7 @@ class Notification{
     text: 'Successfully Done!',
     timeout: 1000,
        }).show();
-  } 
+  }
 
 
   alert(){
@@ -17,7 +17,7 @@ class Notification{
     text: 'Are you Sure?',
     timeout: 1000,
        }).show();
-  } 
+  }
 
 
 
@@ -28,7 +28,7 @@ class Notification{
     text: 'Something Went Wrong ! ',
     timeout: 1000,
        }).show();
-  } 
+  }
 
 
  warning(){
@@ -38,7 +38,7 @@ class Notification{
     text: 'Opps Wrong ',
     timeout: 1000,
        }).show();
-  } 
+  }
 
 
 
@@ -47,9 +47,9 @@ class Notification{
     type: 'error',
     layout: 'topRight',
     text: 'Upload Image less then 1MB ',
-    timeout: 1000,
+    timeout: 3000,
        }).show();
-  } 
+  }
 
 
 
@@ -60,7 +60,7 @@ class Notification{
     text: 'Successfully Add to Cart!',
     timeout: 1000,
        }).show();
-  } 
+  }
 
 
    cart_delete(){
@@ -70,7 +70,7 @@ class Notification{
     text: 'Successfully Deleted!',
     timeout: 1000,
        }).show();
-  } 
+  }
 
 
 
