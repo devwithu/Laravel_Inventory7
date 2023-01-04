@@ -69,6 +69,7 @@ export default {
             axios.post('/api/auth/login', this.form)
                 .then(res => {
                     User.responseAfterLogin(res)
+                    this.$router.push({ name: 'home' })
                 })
 
                 .catch(error => console.log(error.response.data))
