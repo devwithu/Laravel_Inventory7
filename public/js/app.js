@@ -2139,7 +2139,9 @@ var render = function render() {
         _vm.$set(_vm.form, "email", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _vm.errors.email ? _c("small", {
+    staticClass: "text-danger"
+  }, [_vm._v(" " + _vm._s(_vm.errors.email[0]) + " ")]) : _vm._e()]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
   }, [_c("input", {
     directives: [{
@@ -2163,7 +2165,9 @@ var render = function render() {
         _vm.$set(_vm.form, "password", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("hr")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _vm.errors.password ? _c("small", {
+    staticClass: "text-danger"
+  }, [_vm._v(" " + _vm._s(_vm.errors.password[0]) + " ")]) : _vm._e()]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("hr")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
     staticClass: "text-center"
   }, [_c("router-link", {
     staticClass: "font-weight-bold small",
